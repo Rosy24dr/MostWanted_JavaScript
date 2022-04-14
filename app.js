@@ -189,7 +189,7 @@ function chars(input) {
 
 function searchByTraits(people) {
     let userSelectedProp = prompt(
-      'which attribute would you like to search by: height, weight, eyeColor, occupation, Gender, DOB?  '
+      'which attribute would you like to search by: height, weight, eyeColor, occupation, gender, dob?  '
     );
     let userSelectedValue = prompt("What is the value of the attribute?");
     let foundObject = people.filter(function (traits) {
@@ -207,6 +207,8 @@ function searchByTraits(people) {
     });
     return foundObject;
   }
+  
+
   
 
       

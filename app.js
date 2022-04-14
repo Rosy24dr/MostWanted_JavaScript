@@ -66,6 +66,8 @@ function mainMenu(person, people) {
         case "info":
             //! TODO #1: Utilize the displayPerson function //////////////////////////////////////////
             // HINT: Look for a person-object stringifier utility function to help
+
+        
             let personInfo = displayPerson(person[0]);
             alert(personInfo);
             break;
@@ -184,3 +186,27 @@ function chars(input) {
 
 //////////////////////////////////////////* End Of Starter Code *//////////////////////////////////////////
 // Any additional functions can be written below this line 👇. Happy Coding! 😁
+
+function searchByTraits(people) {
+    let userSelectedProp = prompt(
+      'which attribute would you like to search by: height, weight, eyeColor, occupation, Gender, DOB?  '
+    );
+    let userSelectedValue = prompt("What is the value of the attribute?");
+    let foundObject = people.filter(function (traits) {
+      try {
+        if (traits[userSelectedProp].includes(userSelectedValue)) {
+          return true;
+        }
+      } catch (error) {
+        console.log(error);
+      } finally {
+        if (traits[userSelectedProp] === parseInt(userSelectedValue)) {
+          return true;
+        }
+      }
+    });
+    return foundObject;
+  }
+  
+
+      

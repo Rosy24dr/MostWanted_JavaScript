@@ -148,8 +148,7 @@ function displayPerson(person) {
     personInfo += `Weight: ${person.weight}\n`;
     personInfo += `EyeColor: ${person.eyeColor}\n`;
     personInfo += `Occupation: ${person.occupation}\n`;
-    personInfo += `Parents: ${person.parents}\n`;
-    personInfo += `Current Spouse: ${person.currentSpouse}\n`;
+
     
     //! TODO #1a: finish getting the rest of the information to display //////////////////////////////////////////
     alert(personInfo);
@@ -195,6 +194,31 @@ function chars(input) {
 
 //////////////////////////////////////////* End Of Starter Code *//////////////////////////////////////////
 // Any additional functions can be written below this line 👇. Happy Coding! 😁
+function findPersonInfo(person) {
+    displayPerson(person);
+  }
+
+  function findPersonFamily(person, people) {
+    let allFamily = " ";
+    let personFamily = people.filter(function (el) {
+      if (el.id === person.parents[0] || el.id === person.parents[1]) {
+        allFamily += el.firstName + " " + el.lastName + " is the parent \n";
+      }
+      if (el.id === person.currentSpouse) {
+        allFamily += el.firstName + " " + el.lastName + " is the spouse \n";
+      }
+      if (
+        el.parents[(0, 1)] === person.parents[(0, 1)] &&
+        el.id !== person.id &&
+        person.parents[(0, 1)] !== undefined
+      ) {
+        allFamily += el.firstName + " " + el.lastName + " is the sibling \n";
+      }
+    });
+    return allFamily;
+  }
+
+  
 
 
 

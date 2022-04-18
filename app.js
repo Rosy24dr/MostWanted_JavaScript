@@ -262,12 +262,20 @@ function searchByTraits(people) {
         .join("\n")
     );
   }else if (singleOrMultiple === "multiple"){
-    let firstTrait = prompt("Which trait do you want to search by first?");
-    let whatValueOne = prompt("What would you like to check?");
-    let secondTrait = prompt("Which trait do you want to search by second?");
-    let whatValueTwo = prompt("What would you like to check?");
+    let firstTrait = prompt("Lets start with gender. Type gender to confirm.");
+    let whatValueOne = prompt("What is the gender?");
+    let secondTrait = prompt("Next, lets do eyecolor. Type eyeColor to confirm.");
+    let whatValueTwo = prompt("What is the eye color?");
+    let thirdTrait = prompt("Now, lets check height. Type height to confirm.");
+    let whatValueThree = prompt("What is the height?");
+    let intWhatValueThree = parseInt(whatValueThree)
+    let fourthTrait = prompt("Now, lets check the weight. Type weight to confirm");
+    let whatValueForth = prompt("What is the weight?");
+    let intWhatValueForth = parseInt(whatValueForth)
+    let fifthTrait = prompt("Lastly, lets get the occupation. Type occupation to confirm?");
+    let whatValueFifth = prompt("What is the occupation?");
     let displayResults = people.filter(function (el){
-      if (el[firstTrait] === whatValueOne && el[secondTrait] === whatValueTwo){
+      if (el[firstTrait] === whatValueOne && el[secondTrait] === whatValueTwo && el[thirdTrait] === intWhatValueThree && el[fourthTrait] === intWhatValueForth && el[fifthTrait] === whatValueFifth){
         return true;
       }
     })

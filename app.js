@@ -242,30 +242,37 @@ function searchByTraits(people) {
     "Do you want to search for a single trait or multiple traits? Please enter single or multiple:"
   );
 
-  }if (singleOrMultiple === "single") {
+  if (singleOrMultiple === "single") {
     let whichTrait = prompt("Which trait do you want to search by?");
     let whatValue = prompt("What would you like to check?");
       if(whichTrait === "height" | whichTrait === "weight"){
         let intWhatValue = parseInt(whatValue);
-        let displayResults = people.filter(function (el) {
+        let displayResults = people.filter(function (el){
           if (el[whichTrait] === intWhatValue) {
             return true;
         }
-      else if (whichTrait === 'eyeColor' |  whichTrait === 'gender' | whichTrait === 'occupation' | whichTrait === 'dob'){
-        let displayResults = people.filter(function (el) {
-      if (el[whichTrait] === whatValue) {
-        return true;
-      }
-    });
-  
-    alert(
-      displayResults
-        .map(function (el) {
-          return `${el.firstName} ${el.lastName}`;
-        })
-        .join("\n")
-    );
-    
+        });
+        alert(
+          displayResults
+            .map(function (el) {
+              return `${el.firstName} ${el.lastName}`;
+            })
+            .join("\n")
+        )
+      }else if (whichTrait === 'eyeColor' |  whichTrait === 'gender' | whichTrait === 'occupation' | whichTrait === 'dob'){
+        let displayResults = people.filter(function (el){
+          if (el[whichTrait] === whatValue) {
+            return true;
+          }
+        });
+      
+      alert(
+        displayResults
+          .map(function (el) {
+            return `${el.firstName} ${el.lastName}`;
+          })
+          .join("\n")
+      )};
   } else if (singleOrMultiple === "multiple") {
     let firstTrait = prompt("Lets start with gender. Type gender to confirm.");
     let whatValueOne = prompt("What is the gender?");
@@ -305,4 +312,4 @@ function searchByTraits(people) {
         .join("\n")
     );
   }
-  }
+}

@@ -264,19 +264,18 @@ function searchByTraits(people) {
         .join("\n")
     );
   }else if (singleOrMultiple === "multiple"){
-    let whichTrait = prompt("Which trait do you want to search by first?");
-    let whatValue = prompt("What would you like to check?");
-    let whichTrait = prompt("Which trait do you want to search by second?");
-    let whatValue = prompt("What would you like to check?");
-    let displayResults = people.filter(function (el) {
-      if (el[whichTrait] === whatValue) {
+    let firstTrait = prompt("Which trait do you want to search by first?");
+    let whatValueOne = prompt("What would you like to check?");
+    let secondTrait = prompt("Which trait do you want to search by second?");
+    let whatValueTwo = prompt("What would you like to check?");
+    let displayResults = people.filter(function (el){
+      if (el[firstTrait] === whatValueOne && el[secondTrait] === whatValueTwo){
         return true;
       }
-    });
+    })
 
     alert(
-      displayResults
-        .map(function (el) {
+      displayResults.map(function (el){
           return `${el.firstName} ${el.lastName}`;
         })
         .join("\n")

@@ -219,8 +219,6 @@ function findPersonInfo(person) {
 }
 
 function findPersonDescendants(person, people, descendants) {
-    let children = " ";
-    let grandchildren = [];
   
     let personChildren = people.filter(function (el) {
       if (el.parents[0] === person.id || el.parents[1] === person.id) {
